@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "sinon": "^21.1.2"
+  },
+  "name": "2do-tp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "nyc": "^18.0.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
