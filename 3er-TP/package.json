@@ -1,0 +1,16 @@
+{
+  "name": "3er-tp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run JSONPlaceholder_Collection.json -e JSONPlaceholder_Environment.json -r cli,htmlextra"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "newman": "^6.2.2",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}
