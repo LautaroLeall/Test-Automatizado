@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node modules
+node_modules/
+
+# Cypress videos y screenshots (generados automáticamente, no van al repo)
+cypress/videos/
+cypress/screenshots/
+
+# OS files
+.DS_Store
+Thumbs.db
