@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Es fundamental probar los &quot;caminos tristes&quot;. El sistema debe ser capaz de rechazar accesos no autorizados y mostrar un mensaje claro al usuario. Esto previene brechas de seguridad.</description>
+   <name>TC03 Validación de Login con Credenciales Inválidas</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ed73e6cd-adda-476a-be78-12ea64f4d5ae</testCaseGuid>
+</TestCaseEntity>

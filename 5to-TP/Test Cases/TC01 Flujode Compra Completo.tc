@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Es el flujo principal de cualquier e-commerce. Si un usuario no puede agregar un producto al carrito y finalizar la compra, el negocio pierde dinero. Automatizarlo asegura que el núcleo de la aplicación siempre funcione.</description>
+   <name>TC01 Flujode Compra Completo</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5f65ea1b-fbed-45f0-b946-edcc3954f5c7</testCaseGuid>
+</TestCaseEntity>
