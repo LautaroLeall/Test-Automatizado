@@ -19,6 +19,7 @@ Cada carpeta es un Trabajo Práctico independiente con su propio entorno Node.js
 | [Newman](https://github.com/postmanlabs/newman)                                        | ^6      | Runner de colecciones Postman por CLI    |
 | [newman-reporter-htmlextra](https://github.com/DannyDainton/newman-reporter-htmlextra) | ^1      | Reportes HTML de Newman                  |
 | [Cypress](https://www.cypress.io/)                                                     | ^15     | Tests End-to-End (E2E)                   |
+| [Katalon Studio](https://katalon.com/)                                                 | 9+      | Tests E2E con Groovy + Object Repository |
 
 ---
 
@@ -177,3 +178,60 @@ npm run cypress:open
 > Con `cypress:open` podés ver los tests corriendo en vivo en el browser. Ideal para capturas de pantalla para el PDF. 📸
 
 ---
+
+### 📂 TP N°5 – Tests End to End con Katalon Studio
+
+> **Carpeta:** `5to-TP/`  
+> **Sitio bajo prueba:** [Demoblaze](https://www.demoblaze.com) — e-commerce de práctica  
+> **Herramienta:** Katalon Studio (Groovy + Object Repository)
+
+**Tecnologías:** `Katalon Studio` · `Groovy` · `WebUI Keywords` · `GlobalVariables`
+
+**Estructura del proyecto Katalon:**
+
+```
+5to-TP/
+  ├── TP5_Demoblaze.prj                          ← Archivo de proyecto Katalon
+  ├── Profiles/
+  │    └── default.glbl                          ← Variables globales (G_URL, G_Timeout, credenciales)
+  ├── Object Repository/
+  │    └── Page_Demoblaze/
+  │         ├── lnk_LogIn.rs                     ← Selectores robustos (sin XPath absoluto)
+  │         ├── txt_LoginUsername.rs
+  │         ├── btn_LoginSubmit.rs
+  │         └── ... (13 objetos en total)
+  ├── Test Cases/
+  │    ├── TC01 Flujode Compra Completo.tc
+  │    ├── TC02 Inicio de Sesión Exitoso.tc
+  │    ├── TC03 Validación de Login con Credenciales Inválidas.tc
+  │    └── TC04 Navegación y Filtrado Dinámico por Categorías.tc
+  ├── Scripts/
+  │    ├── TC01 Flujode Compra Completo/Script*.groovy
+  │    ├── TC02 Inicio de Sesión Exitoso/Script*.groovy
+  │    ├── TC03 Validación de Login con Credenciales Inválidas/Script*.groovy
+  │    └── TC04 Navegación y Filtrado Dinámico por Categorías/Script*.groovy
+  └── Test Suites/
+       └── TS_TrabajoPractico5.ts                ← Suite con los 4 TCs en orden secuencial
+```
+
+**Casos de prueba E2E (4 en total):**
+| # | Caso | Descripción |
+|---|------|-------------|
+| TC01 | Flujode Compra Completo | Login → Seleccionar producto → Agregar al carrito → Completar formulario de pago → Confirmación |
+| TC02 | Inicio de Sesión Exitoso | Ingresar credenciales válidas → Enviar formulario → Validar acceso al sistema |
+| TC03 | Validación de Login con Credenciales Inválidas | Ingresar credenciales erróneas → Enviar formulario → Validar mensaje de rechazo (alerta) |
+| TC04 | Navegación y Filtrado Dinámico por Categorías | Clic en categoría → Esperar petición (AJAX) → Validar actualización correcta de productos |
+
+**▶️ Cómo correrlo en Katalon Studio:**
+
+```text
+1. Abrir Katalon Studio
+2. File > Open Project > seleccionar la carpeta 5to-TP/
+3. En el panel izquierdo ir a Test Suites > TS_TrabajoPractico5
+4. Hacer doble clic → Run → seleccionar Chrome
+5. Ver resultados en el Log Viewer (todos deben terminar en PASSED)
+```
+
+> **⚠️ Importante antes de ejecutar:**  
+> Abrí `Profiles/default.glbl` y actualizá `G_User_Valido` y `G_Password_Valida`  
+> con un usuario **que ya esté registrado en Demoblaze**.
