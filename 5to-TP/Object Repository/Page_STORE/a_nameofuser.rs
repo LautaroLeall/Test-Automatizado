@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a_nameofuser</name>
+   <tag></tag>
+   <elementGuidId>ac09bbb8-e6f7-48e7-be94-9d589fa1d91f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id = 'nameofuser']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#nameofuser</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=link[name=&quot;Welcome Lautaro-Test&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>b8dff73d-1ca2-4488-8b97-3e4c70df9795</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>nav-link</value>
+      <webElementGuid>3d3bb814-e9a3-4339-938a-5d34890adacc</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>#</value>
+      <webElementGuid>200c00d6-4a90-4089-9eb3-8310318ae18a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>nameofuser</value>
+      <webElementGuid>022136e4-3b2a-40df-8d1e-3e84de8f00e8</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Welcome Lautaro-Test</value>
+      <webElementGuid>417424d1-3b41-4437-a77e-8d6dab358b04</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-1df2b2ee823eddbea2964f48e9996d06</value>
+      <webElementGuid>ffd79296-95ff-403a-a67a-8ef0c2f7e927</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id = 'nameofuser']</value>
+      <webElementGuid>38ed80d3-908c-4655-b6c1-d0efe8f45fb8</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@id = 'nameofuser']</value>
+      <webElementGuid>498756a1-edb8-429b-b07f-ae5ad8181d8f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '#' and @id = 'nameofuser' and (text() = 'Welcome Lautaro-Test' or . = 'Welcome Lautaro-Test')]</value>
+      <webElementGuid>70391ae9-ff3c-4124-82e4-44a8d7c6a20b</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
