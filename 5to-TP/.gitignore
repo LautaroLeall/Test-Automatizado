@@ -1,0 +1,22 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Katalon generated files (logs, reports, screenshots)
+.settings/
+bin/
+build/
+Libs/
+Plugins/
+Reports/
+.gradle/
+.cache/
+.classpath
+.project
+console.properties
+output/
+
+# OS files
+.DS_Store
+Thumbs.db
