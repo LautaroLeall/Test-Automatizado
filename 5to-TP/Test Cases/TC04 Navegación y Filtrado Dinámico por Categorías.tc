@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>En un e-commerce con muchos productos, los filtros son la herramienta principal de búsqueda. Se debe automatizar para asegurar que la base de datos devuelve los artículos correctos al hacer clic en el menú.</description>
+   <name>TC04 Navegación y Filtrado Dinámico por Categorías</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>2d384aac-2209-47ce-abb4-5f9297868f02</testCaseGuid>
+</TestCaseEntity>

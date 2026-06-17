@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El acceso de usuarios es una funcionalidad repetitiva y crítica. Si se rompe, los usuarios no pueden acceder a su historial ni realizar compras con su cuenta.</description>
+   <name>TC02 Inicio de Sesión Exitoso</name>
+   <tag>Tener un usuario creado en Demoblaze.</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>07493252-ff76-4a08-b2fb-d8a23b77f2f9</testCaseGuid>
+</TestCaseEntity>
