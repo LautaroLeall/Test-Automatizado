@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>select_Categoria</name>
+   <tag></tag>
+   <elementGuidId>b539d028-7c2f-457e-9c19-fe08485ab61a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>#filter-category</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id = 'filter-category']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:label=&quot;Categoria&quot;i</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>select</value>
+      <webElementGuid>d91aa7f8-0901-438d-a0ef-69e64ed81966</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>filter-category</value>
+      <webElementGuid>8ed1f17b-b189-4485-95df-e2a882996d59</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-brand</value>
+      <webElementGuid>958fbd50-fba0-448c-857a-f0386cf2c428</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>TodasElectrónicaRopa y AccesoriosColeccionablesLibros y CómicsDeportesHogar y DecoraciónJuguetesArteMúsicaOtros</value>
+      <webElementGuid>67a956fd-d1e9-4efc-8a6a-3563848f5f70</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-8970d226d69152f9da2e46638403ccb3</value>
+      <webElementGuid>d7b3b2cb-bc41-4d7f-b529-7ae9f9dfb69a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id = 'filter-category']</value>
+      <webElementGuid>d0dfc793-23f9-44d5-b11f-24530b313276</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@id = 'filter-category']</value>
+      <webElementGuid>c67995f7-2b40-4887-bbae-f4959fa562e4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//select[@id = 'filter-category' and (text() = 'TodasElectrónicaRopa y AccesoriosColeccionablesLibros y CómicsDeportesHogar y DecoraciónJuguetesArteMúsicaOtros' or . = 'TodasElectrónicaRopa y AccesoriosColeccionablesLibros y CómicsDeportesHogar y DecoraciónJuguetesArteMúsicaOtros')]</value>
+      <webElementGuid>e6ecd5bf-9bbb-46b6-86dd-8355aabdff7f</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
