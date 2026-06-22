@@ -1,0 +1,185 @@
+{
+  "info": {
+    "_postman_id": "d6e4c8dc-6793-4a5d-b41e-c6315a9aa8ba",
+    "name": "Fleeswap API Integration Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39211416",
+    "_collection_link": "https://go.postman.co/collection/39211416-d6e4c8dc-6793-4a5d-b41e-c6315a9aa8ba?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET Listar Publicaciones",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 200 OK\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"La respuesta devuelve un array de publicaciones\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    \r",
+              "    // El verdadero nombre en tu backend es .publications\r",
+              "    var hasData = Array.isArray(jsonData.publications);\r",
+              "                  \r",
+              "    pm.expect(hasData).to.be.true;\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/publications",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "publications"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Crear Publicación sin Auth Token",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 401 Unauthorized\", function () {\r",
+              "    pm.response.to.have.status(401);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"El servidor rechaza la petición por falta de Token\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    \r",
+              "    // Validamos que el JSON tenga la propiedad 'message'\r",
+              "    pm.expect(jsonData).to.have.property(\"message\");\r",
+              "    \r",
+              "    // Validamos que el mensaje sea EXACTAMENTE el que programaste en el backend\r",
+              "    pm.expect(jsonData.message).to.eql(\"Token no proporcionado\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Silla Gamer\",\r\n    \"description\": \"Nueva en caja\",\r\n    \"history\": \"No me gustó el color\",\r\n    \"category\": \"electronica\",\r\n    \"condition\": \"nuevo\",\r\n    \"type\": \"venta\",\r\n    \"photos\": [\r\n        \"https://foto.com/silla.jpg\"\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/publications",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "publications"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Obtener Detalle (ID de Mongo inválido)",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code es 400 Bad Request\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"El servidor detecta que el formato del ID no es de MongoDB\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    \r",
+              "    // Validamos la propiedad 'message'\r",
+              "    pm.expect(jsonData).to.have.property(\"message\");\r",
+              "    \r",
+              "    // Validamos el texto exacto del error\r",
+              "    pm.expect(jsonData.message).to.eql(\"ID invalido\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/publications/1234567890",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "publications",
+            "1234567890"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey"
+  }
+}
