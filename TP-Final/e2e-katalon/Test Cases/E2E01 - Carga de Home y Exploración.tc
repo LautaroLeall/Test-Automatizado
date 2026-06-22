@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validamos que el usuario normal al entrar al sitio vea el catálogo cargado y la interfaz estructurada correctamente. Es la carta de presentación de la app.</description>
+   <name>E2E01 - Carga de Home y Exploración</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fdf1f1c1-5f3b-4f75-ae4a-e1b99aff7275</testCaseGuid>
+</TestCaseEntity>
