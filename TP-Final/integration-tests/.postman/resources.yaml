@@ -1,0 +1,12 @@
+workspace:
+  id: 38893199-2b7a-41cb-81d4-b20526a24856
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/Fleeswap API Integration Tests: 39211416-d6e4c8dc-6793-4a5d-b41e-c6315a9aa8ba
+
+localResources:
+  specs:
+    - ..\postman\specs\Fleeswap_Collections\Fleeswap_Collections.json
