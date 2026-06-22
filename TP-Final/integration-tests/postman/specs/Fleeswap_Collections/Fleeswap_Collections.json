@@ -1,0 +1,78 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fleeswap_Collections",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "{{baseUrl}}"
+    }
+  ],
+  "paths": {
+    "/api/publications": {
+      "get": {
+        "summary": "GET Listar Publicaciones",
+        "responses": {}
+      },
+      "post": {
+        "summary": "POST Crear Publicación sin Auth Token",
+        "responses": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "history": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "condition": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "title": "Silla Gamer",
+                "description": "Nueva en caja",
+                "history": "No me gustó el color",
+                "category": "electronica",
+                "condition": "nuevo",
+                "type": "venta",
+                "photos": [
+                  "https://foto.com/silla.jpg"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/1234567890": {
+      "get": {
+        "summary": "GET Obtener Detalle (ID de Mongo inválido)",
+        "responses": {}
+      }
+    }
+  }
+}

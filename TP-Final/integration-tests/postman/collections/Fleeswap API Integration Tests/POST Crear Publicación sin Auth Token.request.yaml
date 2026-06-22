@@ -1,0 +1,56 @@
+$kind: http-request
+name: POST Crear Publicación sin Auth Token
+url: "{{baseUrl}}/api/publications"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"title\": \"Silla Gamer\",\r
+
+    \    \"description\": \"Nueva en caja\",\r
+
+    \    \"history\": \"No me gustó el color\",\r
+
+    \    \"category\": \"electronica\",\r
+
+    \    \"condition\": \"nuevo\",\r
+
+    \    \"type\": \"venta\",\r
+
+    \    \"photos\": [\r
+
+    \        \"https://foto.com/silla.jpg\"\r
+
+    \    ]\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code es 401 Unauthorized\", function () {\r
+
+      \    pm.response.to.have.status(401);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"El servidor rechaza la petición por falta de Token\", function () {\r
+
+      \    var jsonData = pm.response.json();\r
+
+      \    \r
+
+      \    // Validamos que el JSON tenga la propiedad 'message'\r
+
+      \    pm.expect(jsonData).to.have.property(\"message\");\r
+
+      \    \r
+
+      \    // Validamos que el mensaje sea EXACTAMENTE el que programaste en el backend\r
+
+      \    pm.expect(jsonData.message).to.eql(\"Token no proporcionado\");\r
+
+      });"
+    language: text/javascript
+order: 2000
