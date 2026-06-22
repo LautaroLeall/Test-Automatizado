@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validamos que el componente principal de seguridad (/login) funciona correctamente con un usuario válido (lautaroleal4@gmail.com) y que el sistema redirige a la cuenta o panel.</description>
+   <name>E2E02 - Login Exitoso (Happy Path)</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>12887743-e316-4ae4-979a-bfc5997e4215</testCaseGuid>
+</TestCaseEntity>
