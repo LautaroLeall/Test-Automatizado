@@ -1,0 +1,21 @@
+{
+  "name": "tp-final-fleeswap",
+  "version": "1.0.0",
+  "description": "TP Final – Testeo Automatizado – UNSTA 2026 – Fleeswap",
+  "scripts": {
+    "test:unit": "mocha unit-tests/test/validarPublicacion.test.js",
+    "coverage": "nyc npm run test:unit",
+    "test:integration": "newman run integration-tests/Fleeswap_Collection.json -e integration-tests/Fleeswap_Environment.json -r cli,htmlextra --reporter-htmlextra-export integration-tests/newman/reporte.html",
+    "test": "npm run test:unit"
+  },
+  "dependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "sinon": "^21.1.2",
+    "newman": "^6.2.2",
+    "newman-reporter-htmlextra": "^1.23.1"
+  },
+  "devDependencies": {
+    "nyc": "^18.0.0"
+  }
+}
