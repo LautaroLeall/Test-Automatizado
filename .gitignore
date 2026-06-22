@@ -1,0 +1,59 @@
+# =========================================================================
+# REPOSITORIO: Test Automatizado - UNSTA
+# .gitignore GLOBAL para todos los Trabajos Prácticos (TP 1 al TP Final)
+# =========================================================================
+
+# -------------------------------------------------------------------------
+# 1. NODE.JS & DEPENDENCIAS GLOBALES
+# -------------------------------------------------------------------------
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# -------------------------------------------------------------------------
+# 2. TESTS UNITARIOS (Mocha, Chai, Sinon, NYC)
+# Aplica a: 1er-TP, 2do-TP, TP-Final
+# -------------------------------------------------------------------------
+.nyc_output/
+coverage/
+
+# -------------------------------------------------------------------------
+# 3. TESTS DE INTEGRACIÓN (Newman)
+# Aplica a: 3er-TP, TP-Final
+# -------------------------------------------------------------------------
+# Evita subir los reportes HTML generados automáticamente
+newman/
+
+# -------------------------------------------------------------------------
+# 4. TESTS E2E CON CYPRESS
+# Aplica a: 4to-TP
+# -------------------------------------------------------------------------
+# Evita subir videos y capturas de pantalla de ejecuciones de Cypress
+cypress/videos/
+cypress/screenshots/
+
+# -------------------------------------------------------------------------
+# 5. TESTS E2E CON KATALON STUDIO
+# Aplica a: 5to-TP, TP-Final/e2e-katalon
+# -------------------------------------------------------------------------
+# Archivos binarios, configuraciones locales y reportes automáticos
+bin/
+Libs/
+.cache/
+Reports/
+console.properties
+**/*.class
+settings/
+.settings/
+.classpath
+
+# -------------------------------------------------------------------------
+# 6. ARCHIVOS DEL SISTEMA OPERATIVO Y OTROS
+# -------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini

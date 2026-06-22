@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validamos el manejo de errores del Frontend. Al poner una contraseña equivocada, la página NO debe explotar ni redirigir, sino que debe mostrar una alerta o texto de validación explícito (&quot;Credenciales inválidas&quot;).</description>
+   <name>E2E03 - Login Fallido (Edge Path)</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>6e128266-e04f-4c12-8ce5-4bed9c6ad50f</testCaseGuid>
+</TestCaseEntity>

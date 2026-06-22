@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Lautaro</name>
+   <tag></tag>
+   <elementGuidId>e3c6a982-1f4f-42ff-a7e2-24184be33948</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>button.transition-opacity</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[@class and contains(concat(' ', normalize-space(@class), ' '), ' transition-opacity ')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=button[name=&quot;Lautaro Lautaro&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>54871334-20ea-4571-92e8-30c424ec9e77</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>flex items-center gap-2.5 hover:opacity-75 transition-opacity</value>
+      <webElementGuid>7adc2b68-2654-4408-9d4b-2b4364ae1b87</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Lautaro</value>
+      <webElementGuid>b19a1c41-4edd-4b23-8bc5-dd7e85e39bd9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-e775bd0f99f61a76db2a259b6919a501</value>
+      <webElementGuid>a483da4e-2818-4a86-829b-0cfcfd5fb31c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//button[@class and contains(concat(' ', normalize-space(@class), ' '), ' transition-opacity ')]</value>
+      <webElementGuid>3b660e87-b593-4bd7-ba20-f3751c76ab73</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//button[@class and contains(concat(' ', normalize-space(@class), ' '), ' transition-opacity ')]</value>
+      <webElementGuid>a9a90b4c-f3a8-43df-bc8f-fe138a16ec4c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'Lautaro' or . = 'Lautaro')]</value>
+      <webElementGuid>5657b8f2-9b15-4ca6-8c4e-1aa7593a9031</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

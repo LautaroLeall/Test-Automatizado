@@ -235,3 +235,56 @@ npm run cypress:open
 > **⚠️ Importante antes de ejecutar:**  
 > Abrí `Profiles/default.glbl` y actualizá `G_User_Valido` y `G_Password_Valida`  
 > con un usuario **que ya esté registrado en Demoblaze**.
+
+---
+
+### 📂 TP Final – Testing Completo sobre Aplicación Real (Fleeswap)
+
+> **Carpeta:** `TP-Final/`  
+> **App bajo prueba:** [Fleeswap](https://fleeswap.vercel.app/) — plataforma real de intercambio y venta de objetos entre usuarios  
+> **Backend:** [https://fleeswap-backend.onrender.com](https://fleeswap-backend.onrender.com) (Node.js + Express + MongoDB + JWT)
+
+Integra las **3 capas de la Pirámide de Testing** sobre un sistema real en producción:
+
+| Capa           | Herramientas                       | Tests | Resultado                |
+| -------------- | ---------------------------------- | ----- | ------------------------ |
+| 🔵 Unitaria    | Mocha · Chai · Sinon · NYC         | 3     | ✅ 3/3 PASS              |
+| 🟢 Integración | Postman · Newman · htmlextra       | 4     | ✅ 4/4 PASS · 0 Failures |
+| 🔴 E2E         | Katalon Studio · Groovy · Selenium | 3     | ✅ 3/3 grabados          |
+
+**Estructura:**
+
+```
+TP-Final/
+  ├── package.json
+  ├── .gitignore
+  ├── README.md                    ← Resumen general + 9 Q&A para la defensa
+  ├── unit-tests/                  ← Tests unitarios: validarPublicacion.js
+  ├── integration-tests/           ← Colección Postman + Newman contra API real
+  └── e2e-katalon/                 ← Proyecto Katalon con 3 flujos grabados
+```
+
+**📖 Documentación por capa:**
+
+- 🔵 [Unitarios — unit-tests/README.md](./TP-Final/unit-tests/README.md)
+- 🟢 [Integración — integration-tests/README.md](./TP-Final/integration-tests/README.md)
+- 🔴 [E2E Katalon — e2e-katalon/README.md](./TP-Final/e2e-katalon/README.md)
+- 📋 [README General TP-Final](./TP-Final/README.md)
+
+**▶️ Cómo correrlo:**
+
+```bash
+cd TP-Final
+npm install
+
+# Tests unitarios
+npm run test:unit
+
+# Tests unitarios + cobertura NYC
+npm run coverage
+
+# Tests de integración (requiere internet — API en OnRender)
+npm run test:integration
+
+# Tests E2E → Abrir TP-Final.prj en Katalon Studio y ejecutar la Test Suite
+```

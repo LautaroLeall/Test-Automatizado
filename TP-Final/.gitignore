@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias
+node_modules/
+package-lock.json
+
+# Reportes de Cobertura (Tests Unitarios)
+.nyc_output/
+coverage/
+
+# Reportes generados automáticamente (Tests de Integración)
+integration-tests/newman/
+
+# Archivos de Katalon Studio (No subir archivos pesados ni reportes E2E)
+e2e-katalon/bin/
+e2e-katalon/Libs/
+e2e-katalon/.cache/
+e2e-katalon/Reports/
+e2e-katalon/console.properties
+e2e-katalon/**/*.class
+
+# Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
+desktop.ini

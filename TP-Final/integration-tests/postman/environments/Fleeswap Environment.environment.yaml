@@ -1,0 +1,12 @@
+owner: "39211416"
+team: "19207839"
+lastUpdatedBy: "39211416"
+lastRevision: 1782157769000
+name: Fleeswap Environment
+color: 120
+values:
+  - key: baseUrl
+    value: https://fleeswap-backend.onrender.com
+    enabled: true
+createdAt: 2026-06-22T19:49:29.000Z
+updatedAt: 2026-06-22T19:49:29.000Z

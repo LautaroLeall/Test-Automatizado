@@ -1,0 +1,31 @@
+$kind: http-request
+name: GET Listar Publicaciones
+url: "{{baseUrl}}/api/publications"
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code es 200 OK\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"La respuesta devuelve un array de publicaciones\", function () {\r
+
+      \    var jsonData = pm.response.json();\r
+
+      \    \r
+
+      \    // El verdadero nombre en tu backend es .publications\r
+
+      \    var hasData = Array.isArray(jsonData.publications);\r
+
+      \                  \r
+
+      \    pm.expect(hasData).to.be.true;\r
+
+      });"
+    language: text/javascript
+order: 1000
