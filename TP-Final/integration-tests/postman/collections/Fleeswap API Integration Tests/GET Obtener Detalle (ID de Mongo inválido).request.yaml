@@ -1,0 +1,33 @@
+$kind: http-request
+name: GET Obtener Detalle (ID de Mongo inválido)
+url: "{{baseUrl}}/api/publications/1234567890"
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code es 400 Bad Request\", function () {\r
+
+      \    pm.response.to.have.status(400);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"El servidor detecta que el formato del ID no es de MongoDB\", function () {\r
+
+      \    var jsonData = pm.response.json();\r
+
+      \    \r
+
+      \    // Validamos la propiedad 'message'\r
+
+      \    pm.expect(jsonData).to.have.property(\"message\");\r
+
+      \    \r
+
+      \    // Validamos el texto exacto del error\r
+
+      \    pm.expect(jsonData.message).to.eql(\"ID invalido\");\r
+
+      });"
+    language: text/javascript
+order: 3000
