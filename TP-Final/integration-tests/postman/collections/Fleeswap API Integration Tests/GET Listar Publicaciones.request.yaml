@@ -1,5 +1,13 @@
 $kind: http-request
 name: GET Listar Publicaciones
+description: |-
+  Verifica que el endpoint GET /api/publications devuelva una respuesta exitosa con una lista válida de publicaciones.
+
+  **Qué verifica:**
+
+  - El servidor responde con HTTP `200 OK`.
+      
+  - El cuerpo de la respuesta contiene una propiedad `publications` que es un array JSON no nulo, confirmando que el endpoint expone correctamente el listado de publicaciones.
 url: "{{baseUrl}}/api/publications"
 method: GET
 scripts:

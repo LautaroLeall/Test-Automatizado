@@ -1,5 +1,13 @@
 $kind: http-request
 name: GET Obtener Detalle (ID de Mongo inválido)
+description: |-
+  Valida que el endpoint GET /api/publications/:id maneje correctamente un ObjectId de MongoDB con formato inválido.
+
+  **Qué verifica:**
+
+  - El servidor responde con HTTP `400 Bad Request` cuando se proporciona una cadena que no es un ObjectId válido (por ejemplo, `1234567890`) como ID.
+      
+  - El cuerpo de la respuesta contiene una propiedad `message` con el valor exacto `"ID inválido"`, confirmando que el backend valida el formato del ID antes de consultar la base de datos.
 url: "{{baseUrl}}/api/publications/1234567890"
 method: GET
 scripts:
@@ -26,7 +34,7 @@ scripts:
 
       \    // Validamos el texto exacto del error\r
 
-      \    pm.expect(jsonData.message).to.eql(\"ID invalido\");\r
+      \    pm.expect(jsonData.message).to.eql(\"ID inválido\"); \r
 
       });"
     language: text/javascript

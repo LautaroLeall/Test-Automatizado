@@ -1,5 +1,13 @@
 $kind: http-request
 name: POST Crear Publicación sin Auth Token
+description: |-
+  Verifica que el endpoint POST /api/publications exija autenticación, rechazando las solicitudes que no incluyan un token de autorización válido.
+
+  **Qué verifica:**
+
+  - El servidor responde con HTTP `401 Unauthorized` incluso cuando se envía un payload de publicación completo sin token de autenticación.
+      
+  - El cuerpo de la respuesta contiene una propiedad `message` con el valor exacto `"Token no proporcionado"`, confirmando que el middleware de autenticación está activo y bloquea correctamente las solicitudes no autenticadas.
 url: "{{baseUrl}}/api/publications"
 method: POST
 body:
