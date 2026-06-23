@@ -23,6 +23,8 @@ e2e-katalon/.cache/
 e2e-katalon/Reports/
 e2e-katalon/console.properties
 e2e-katalon/**/*.class
+e2e-katalon/.project
+e2e-katalon/.classpath
 
 # Archivos del Sistema Operativo
 .DS_Store
