@@ -103,4 +103,99 @@ describe('Suite – Validar Publicación Fleeswap', function () {
         }).to.throw(Error, 'Tipo no válido');
     });
 
+    // ─────────────────────────────────────────────────────────
+    // TESTS PARA ALCANZAR EL 100% DE COVERAGE
+    // ─────────────────────────────────────────────────────────
+
+    // ─────────────────────────────────────────────────────────
+    // UT04 – Edge Path: título vacío lanza Error
+    // Estilo: expect
+    // La función exige que el título sea un string y no esté vacío.
+    // Cubre la validación inicial de titulo.trim() === ''.
+    // ─────────────────────────────────────────────────────────
+    it('UT04 – EP – Lanza Error si el título está vacío (expect)', function () {
+        // Arrange
+        var titulo = '';
+        var tipo = 'venta';
+        var condicion = 'nuevo';
+
+        // Act & Assert
+        expect(function () {
+            main.validarPublicacion(titulo, tipo, condicion);
+        }).to.throw(Error, 'El título es obligatorio');
+    });
+
+    // ─────────────────────────────────────────────────────────
+    // UT05 – Edge Path: título súper largo lanza Error
+    // Estilo: expect
+    // Verifica el límite de longitud impuesto por el backend.
+    // El título no puede tener más de 100 caracteres.
+    // ─────────────────────────────────────────────────────────
+    it('UT05 – EP – Lanza Error si el título supera los 100 caracteres (expect)', function () {
+        // Arrange
+        var titulo = 'A'.repeat(101);
+        var tipo = 'venta';
+        var condicion = 'nuevo';
+
+        // Act & Assert
+        expect(function () {
+            main.validarPublicacion(titulo, tipo, condicion);
+        }).to.throw(Error, 'superar los 100 caracteres');
+    });
+
+    // ─────────────────────────────────────────────────────────
+    // UT06 – Edge Path: condición inválida lanza Error
+    // Estilo: expect
+    // Si el usuario enviara un valor fuera del enum de condición.
+    // ─────────────────────────────────────────────────────────
+    it('UT06 – EP – Lanza Error cuando la condición no es válida en Fleeswap (expect)', function () {
+        // Arrange
+        var titulo = 'Celular usado';
+        var tipo = 'venta';
+        var condicion = 'roto_destruido'; // No existe en producción
+
+        // Act & Assert
+        expect(function () {
+            main.validarPublicacion(titulo, tipo, condicion);
+        }).to.throw(Error, 'Condición no válida');
+    });
+
+    // ─────────────────────────────────────────────────────────
+    // UT07 – Happy Path: verificar funciones de arrays puros
+    // Estilo: assert
+    // Cubre la ejecución de getCategoriasValidas() sin pasar 
+    // por la lógica principal de validarPublicacion.
+    // ─────────────────────────────────────────────────────────
+    it('UT07 – HP – Retorna el array de categorías correctamente (assert)', function () {
+        // Act
+        var categorias = main.getCategoriasValidas();
+
+        // Assert
+        assert.isArray(categorias, 'Debe devolver un array de categorías');
+        assert.include(categorias, 'electronica', 'Debe contener la categoría electronica');
+    });
+
+    // ─────────────────────────────────────────────────────────
+    // UT08 – Happy Path: verificar array de tipos reales
+    // Estilo: assert
+    // Apagamos temporalmente el Stub de Sinon para permitir
+    // que Node.js lea la línea original del código fuente
+    // ─────────────────────────────────────────────────────────
+    it('UT08 – HP – Retorna el array de tipos originales del backend (assert)', function () {
+        // Arrange: Apagamos el Stub temporalmente
+        stubTipos.restore();
+
+        // Act
+        var tipos = main.getTiposValidos();
+
+        // Assert
+        assert.isArray(tipos);
+        assert.include(tipos, 'venta');
+
+        // Arrange (Restore): Volvemos a encender el Stub 
+        // para aislar los tests si se agregan más abajo
+        stubTipos = sinon.stub(main, 'getTiposValidos');
+        stubTipos.withArgs().returns(['trueque', 'venta', 'ambos', 'canje']);
+    });
+
 });
