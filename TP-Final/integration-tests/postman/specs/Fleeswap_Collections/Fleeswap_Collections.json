@@ -1,9 +1,9 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Fleeswap_Collections",
+    "title": "Z",
     "version": "1.0.0",
-    "description": ""
+    "description": "Esta colección contiene pruebas de integración para el endpoint de publicaciones de la **API** de **Fleeswap** (`/api/publications`). Cubre tres escenarios clave:\n\n1. **Listar Publicaciones:** Verifica que una petición `GET /api/publications` retorne un código de estado `200 OK` y un array válido de publicaciones en el cuerpo de la respuesta.\n    \n2. **Crear Publicación sin Auth Token:** Verifica que una petición `POST /api/publications` realizada sin un token de autenticación sea rechazada correctamente con un código de estado `401 Unauthorized` y el mensaje \"Token no proporcionado\".\n    \n3. **Obtener Detalle con ID de MongoDB Inválido:** Verifica que una petición `GET /api/publications/{id}` utilizando un ObjectId de MongoDB mal formado retorne un código de estado `400 Bad Request` y el mensaje de error \"ID inválido\".\n    \n\nTodas las peticiones utilizan la variable de entorno `{{baseUrl}}` e incluyen scripts de prueba automatizados (post-response) para validar tanto los códigos de estado HTTP como la estructura del cuerpo de la respuesta."
   },
   "servers": [
     {
@@ -14,11 +14,13 @@
     "/api/publications": {
       "get": {
         "summary": "GET Listar Publicaciones",
-        "responses": {}
+        "responses": {},
+        "description": "Verifica que el endpoint GET /api/publications devuelva una respuesta exitosa con una lista válida de publicaciones.\n\n**Qué verifica:**\n\n- El servidor responde con HTTP `200 OK`.\n    \n- El cuerpo de la respuesta contiene una propiedad `publications` que es un array JSON no nulo, confirmando que el endpoint expone correctamente el listado de publicaciones."
       },
       "post": {
         "summary": "POST Crear Publicación sin Auth Token",
         "responses": {},
+        "description": "Verifica que el endpoint POST /api/publications exija autenticación, rechazando las solicitudes que no incluyan un token de autorización válido.\n\n**Qué verifica:**\n- El servidor responde con HTTP `401 Unauthorized` incluso cuando se envía un payload de publicación completo sin token de autenticación.\n- El cuerpo de la respuesta contiene una propiedad `message` con el valor exacto `\"Token no proporcionado\"`, confirmando que el middleware de autenticación está activo y bloquea correctamente las solicitudes no autenticadas.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -71,7 +73,8 @@
     "/api/publications/1234567890": {
       "get": {
         "summary": "GET Obtener Detalle (ID de Mongo inválido)",
-        "responses": {}
+        "responses": {},
+        "description": "Valida que el endpoint GET /api/publications/:id maneje correctamente un ObjectId de MongoDB con formato inválido.\n\n**Qué verifica:**\n- El servidor responde con HTTP `400 Bad Request` cuando se proporciona una cadena que no es un ObjectId válido (por ejemplo, `1234567890`) como ID.\n- El cuerpo de la respuesta contiene una propiedad `message` con el valor exacto `\"ID inválido\"`, confirmando que el backend valida el formato del ID antes de consultar la base de datos."
       }
     }
   }
