@@ -63,17 +63,3 @@ _Demuestra que el frontend se conecta correctamente al backend y filtra las publ
 3. Ve a la sección **Test Suites** en el panel izquierdo.
 4. Abre la Suite y presioná el botón ▶️ **Run** seleccionando **Chrome**.
 5. Katalon abrirá instancias automatizadas del navegador y ejecutará los 3 flujos, generando el reporte final en la carpeta `Reports/`.
-
----
-
-## ❓ Preguntas y Respuestas Técnicas
-
-### Q8: En el E2E03 agregaste un "Delay" de 1 segundo antes de verificar el cartel rojo. ¿Por qué es necesario en una app moderna?
-
-Porque **React (SPA) es asíncrono**. Al hacer clic en "Iniciar sesión", el frontend manda la petición al backend y tarda unos milisegundos en recibir el 401, procesarlo y **renderizar el componente de error** en el DOM. Si Katalon buscara el elemento instantáneamente tras el clic, el test fallaría porque el mensaje aún no existe en el árbol de nodos HTML. El `WebUI.delay(1)` le da tiempo al ciclo de React para actualizarse antes de ejecutar `verifyElementVisible`.
-
----
-
-### Q9: ¿Cómo sabe Katalon dónde hacer clic o dónde escribir? ¿Qué es el Object Repository?
-
-El **Object Repository** es la base de datos interna de Katalon donde se guardan las "identidades" de los elementos visuales de la página (agrupados en `Page_Fleeswap`). Katalon utiliza **localizadores** (XPath o selectores CSS) capturados automáticamente durante el proceso de Record & Playback para rastrear la estructura HTML exacta de cada botón o input. En el Groovy Script, `findTestObject('Page_Fleeswap/button_Inici sesin')` recupera ese localizador y le dice al driver de Selenium dónde debe hacer clic.
