@@ -1,5 +1,13 @@
 $kind: collection
-auth:
-  - id: 8a9ba225-5a13-4711-b130-ef5ff5ef349c
-    type: apikey
-    name: apikey auth
+name: Fleeswap API Integration Tests
+description: |-
+  Esta colección contiene pruebas de integración para el endpoint de publicaciones de la **API** de **Fleeswap** (`/api/publications`). Cubre tres escenarios clave:
+
+  1. **Listar Publicaciones:** Verifica que una petición `GET /api/publications` retorne un código de estado `200 OK` y un array válido de publicaciones en el cuerpo de la respuesta.
+      
+  2. **Crear Publicación sin Auth Token:** Verifica que una petición `POST /api/publications` realizada sin un token de autenticación sea rechazada correctamente con un código de estado `401 Unauthorized` y el mensaje "Token no proporcionado".
+      
+  3. **Obtener Detalle con ID de MongoDB Inválido:** Verifica que una petición `GET /api/publications/{id}` utilizando un ObjectId de MongoDB mal formado retorne un código de estado `400 Bad Request` y el mensaje de error "ID inválido".
+      
+
+  Todas las peticiones utilizan la variable de entorno `{{baseUrl}}` e incluyen scripts de prueba automatizados (post-response) para validar tanto los códigos de estado HTTP como la estructura del cuerpo de la respuesta.
