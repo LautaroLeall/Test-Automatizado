@@ -155,7 +155,7 @@
               "    pm.expect(jsonData).to.have.property(\"message\");\r",
               "    \r",
               "    // Validamos el texto exacto del error\r",
-              "    pm.expect(jsonData.message).to.eql(\"ID invalido\");\r",
+              "    pm.expect(jsonData.message).to.eql(\"ID inválido\");\r",
               "});"
             ],
             "type": "text/javascript",
